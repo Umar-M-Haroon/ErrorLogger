@@ -49,7 +49,7 @@ const addError = (request, response) => {
 }
 
 app
-    .route('/')
+    .route('/error')
     // GET endpoint
     .get(getErrors)
     // POST endpoint
