@@ -31,6 +31,7 @@ app.use(limiter)
 const getErrors = (request, response) => {
     pool.query('SELECT errorID, message FROM harbor', (error, results) => {
         if (error) {
+            console.log(error)
             throw error
         }
         response.status(200).json(results.rows)
@@ -42,6 +43,7 @@ const addError = (request, response) => {
     console.log(request.body[0])
     pool.query('INSERT INTO harbor (errorID, message) VALUES ($1, $2)', [errorid, message], error => {
         if (error) {
+            console.log(error)
             throw error
         }
         response.status(201).json({ status: 'success', message: 'Error added.' })
