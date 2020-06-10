@@ -9,6 +9,7 @@ const pool = new Pool({
     connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
     ssl: isProduction,
 })
+console.log(isProduction);
 console.log(pool.connectionString);
 console.log(pool.connectionString);
 console.log(pool.connectionString);
