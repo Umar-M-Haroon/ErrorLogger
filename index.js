@@ -4,13 +4,13 @@ const rateLimit = require('express-rate-limit');
 const { body, check } = require('express-validator');
 const cors = require('cors')
 const express = require('express')
-// const helmet = require('helmet');
+const helmet = require('helmet');
 const { pool } = require('./config')
 
 const app = express()
 
 app.use(compression())
-// app.use(helmet())
+app.use(helmet())
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
